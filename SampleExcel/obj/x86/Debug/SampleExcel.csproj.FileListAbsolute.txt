@@ -6,3 +6,11 @@
 /Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcel/obj/x86/Debug/SampleExcel.csproj.CoreCompileInputs.cache
 /Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcel/obj/x86/Debug/SampleExcel.exe
 /Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcel/obj/x86/Debug/SampleExcel.pdb
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/obj/x86/Debug/SampleExcel.csprojResolveAssemblyReference.cache
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/obj/x86/Debug/SampleExcel.csproj.CoreCompileInputs.cache
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/obj/x86/Debug/SampleExcel.exe
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/obj/x86/Debug/SampleExcel.pdb
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/SampleExcel.exe
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/SampleExcel.pdb
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/EPPlus.dll
+/Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/EPPlus.xml

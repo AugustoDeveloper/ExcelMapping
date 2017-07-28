@@ -42,8 +42,8 @@ namespace SampleExcel.Processor
 
 		private IExcelRowProcessor BuildRow(List<IExcelProperty> properties)
 		{
-			var hasGroupProperty = properties.Count(p => p is IExcelGroupProperty) > 0;
-            if (hasGroupProperty)
+			var hasComplexGroupProperty = properties.Count(p => p is IExcelComplexGroupProperty) > 0;
+            if (hasComplexGroupProperty)
                 return new ExcelComplexTableProcessor();
             else
                 return new ExcelSimpleTableProcessor();

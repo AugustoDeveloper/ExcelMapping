@@ -13,7 +13,7 @@ namespace SampleExcel.Component
 
     public class ExcelSimpleProperty<TDto> : IExcelSimpleProperty<TDto>, IExcelSimplePropertyConfigurationMappingFluent<TDto>, IExcelSimplePropertyMappingFluent<TDto>
     {
-        private IDataExtraction _extractor;
+        protected IDataExtraction Extractor { get; set; }
 
         public int ColumnOrder { get; set; }
 
@@ -21,12 +21,12 @@ namespace SampleExcel.Component
 
         public void BuildDataExtractor<TValue>(Expression<Func<TDto, TValue>> propertyExpression)
         {
-            _extractor = new DataExtraction<TDto, TValue>(propertyExpression);
+            Extractor = new DataExtraction<TDto, TValue>(propertyExpression);
         }
 
         public object GetValue(object data)
         {
-            return _extractor.GetValueFromData(data);
+            return Extractor.GetValueFromData(data);
         }
 
         public IExcelSimplePropertyConfigurationMappingFluent<TDto> Map<TValue>(Expression<Func<TDto, TValue>> propertyExpression)

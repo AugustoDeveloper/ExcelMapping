@@ -7,6 +7,10 @@ namespace SampleExcel.Component.Base
     {
         int? StartRow { get; set; }
 
+        bool ShowCaption { get; }
+
         List<IExcelProperty> Properties { get; }
+
+        int GetMaxColumnOrder();
     }
 }

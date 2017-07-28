@@ -53,6 +53,11 @@
     <Compile Include="Processor\IExcelRowProcessor.cs" />
     <Compile Include="Processor\ExcelComplexTableProcessor.cs" />
     <Compile Include="Processor\ExcelBaseProcessor.cs" />
+    <Compile Include="Component\Base\IExcelComplexGroupProperty.cs" />
+    <Compile Include="Configuration\IExcelSimpleGroupPropertyConfigurationMapping.cs" />
+    <Compile Include="Configuration\IExcelGroupPropertyConfigurationMapping.cs" />
+    <Compile Include="Configuration\IExcelPropertiesContainerConfigurationMappingFluent.cs" />
+    <Compile Include="Mapping\IExcelSimpleGroupPropertyMappingFluent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

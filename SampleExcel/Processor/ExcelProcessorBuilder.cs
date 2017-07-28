@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using SampleExcel.Component.Base;
+using Excel.Component.Library.Component.Base;
 
-namespace SampleExcel.Processor
+namespace Excel.Component.Library.Processor
 {
     public interface IExcelProcessorBuilder
     {
@@ -14,8 +14,8 @@ namespace SampleExcel.Processor
 
     public class ExcelProcessorBuilder : IExcelProcessorBuilder
     {
-		private IExcelHeaderProcessor _header;
-		private IExcelRowProcessor _row;
+        private IExcelHeaderProcessor _header;
+        private IExcelRowProcessor _row;
 
         private ExcelProcessorBuilder() { }
 
@@ -32,22 +32,22 @@ namespace SampleExcel.Processor
         }
 
         private IExcelHeaderProcessor BuildHeader(List<IExcelProperty> properties)
-		{
-            var hasGroupProperty = properties.Count(p => p is IExcelGroupProperty) > 0;
-			if (hasGroupProperty)
-				return new ExcelComplexTableProcessor();
-			else
-				return new ExcelSimpleTableProcessor();
-		}
+        {
+            var hasGroupProperty = (properties != null && properties.Count(p => p is IExcelGroupProperty) > 0);
+            if (hasGroupProperty)
+                return new ExcelComplexTableProcessor();
+            else
+                return new ExcelSimpleTableProcessor();
+        }
 
-		private IExcelRowProcessor BuildRow(List<IExcelProperty> properties)
-		{
-			var hasComplexGroupProperty = properties.Count(p => p is IExcelComplexGroupProperty) > 0;
+        private IExcelRowProcessor BuildRow(List<IExcelProperty> properties)
+        {
+            var hasComplexGroupProperty = (properties != null && properties.Count(p => p is IExcelComplexGroupProperty) > 0);
             if (hasComplexGroupProperty)
                 return new ExcelComplexTableProcessor();
             else
                 return new ExcelSimpleTableProcessor();
-		}
+        }
 
         public static IExcelProcessorBuilder GetDefaultBuilder()
         {

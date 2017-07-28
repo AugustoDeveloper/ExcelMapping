@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq.Expressions;
-using SampleExcel.Configuration;
+using Excel.Component.Library.Configuration;
 
-namespace SampleExcel.Mapping
+namespace Excel.Component.Library.Mapping
 {
     public interface IExcelSimplePropertyMappingFluent<TDto>
     {
-        IExcelSimplePropertyConfigurationMappingFluent<TDto> Map<TValue>(Expression<Func<TDto, TValue>> propertyExpression);
+        IExcelSimplePropertyConfigurationMappingFluent<TDto> MapProperty<TValue>(Expression<Func<TDto, TValue>> propertyExpression);
     }
 }

@@ -14,3 +14,11 @@
 /Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/SampleExcel.pdb
 /Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/EPPlus.dll
 /Users/augustocesar/Documents/Projetos/VS/Mappingexcel/ExcelMapping/SampleExcel/bin/Debug/EPPlus.xml
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\bin\Debug\SampleExcel.exe.config
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\bin\Debug\SampleExcel.exe
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\bin\Debug\SampleExcel.pdb
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\bin\Debug\EPPlus.dll
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\bin\Debug\EPPlus.xml
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\obj\x86\Debug\SampleExcel.exe
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\obj\x86\Debug\SampleExcel.pdb
+C:\Projetos\VS2012\open-source-codes\ExcelMapping\ExcelMapping\SampleExcel\obj\x86\Debug\SampleExcel.csprojResolveAssemblyReference.cache

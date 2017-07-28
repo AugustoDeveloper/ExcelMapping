@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace SampleExcel.Component
+namespace Excel.Component.Library.Component
 {
 	public interface IDataExtraction
 	{

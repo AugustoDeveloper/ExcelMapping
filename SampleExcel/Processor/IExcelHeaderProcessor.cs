@@ -1,8 +1,8 @@
 ﻿using System;
 using OfficeOpenXml;
-using SampleExcel.Component.Base;
+using Excel.Component.Library.Component.Base;
 
-namespace SampleExcel.Processor
+namespace Excel.Component.Library.Processor
 {
     public interface IExcelHeaderProcessor
     {

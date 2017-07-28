@@ -1,14 +1,14 @@
 ﻿using System;
 using OfficeOpenXml;
-using SampleExcel.Component;
-using SampleExcel.Configuration;
-using SampleExcel.Mapping;
+using Excel.Component.Library.Component;
+using Excel.Component.Library.Configuration;
+using Excel.Component.Library.Mapping;
 
-namespace SampleExcel
+namespace Excel.Component.Library
 {
     public static class ExcelMappingExtension
     {
-        public static IExcelTablePropertyMappingFluent<TDto> CreateTable<TDto>(this ExcelWorksheet obj, Action<IExcelTablePropertyConfigurationMappingFluent<TDto>> configure)
+        public static IExcelTableProperty<TDto> CreateTable<TDto>(this ExcelWorksheet obj, Action<IExcelTablePropertyConfigurationMappingFluent<TDto>> configure)
         {
             var table = new ExcelTableProperty<TDto>();
             configure(table);

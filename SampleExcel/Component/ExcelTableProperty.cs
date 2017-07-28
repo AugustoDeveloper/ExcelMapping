@@ -1,28 +1,32 @@
 ﻿using System;
-using SampleExcel.Component.Base;
-using SampleExcel.Configuration;
-using SampleExcel.Mapping;
+using Excel.Component.Library.Component.Base;
+using Excel.Component.Library.Configuration;
+using Excel.Component.Library.Mapping;
 
-namespace SampleExcel.Component
+namespace Excel.Component.Library.Component
 {
-    public interface IExcelTableProperty<TDto> : IExcelTableContainer
+    public interface IExcelTableProperty<TDto> : IExcelTableContainer, IExcelTablePropertyMappingFluent<TDto>, IExcelTablePropertyConfigurationMappingFluent<TDto>
     {
         
     }
 
-    public class ExcelTableProperty<TDto> :ExcelSimpleGroupProperty<TDto>, IExcelTablePropertyMappingFluent<TDto>, IExcelTablePropertyConfigurationMappingFluent<TDto> ,IExcelTableProperty<TDto>
+    public class ExcelTableProperty<TDto> : ExcelSimpleGroupProperty<TDto>, IExcelTableProperty<TDto>
     {
         public bool ShowHeaderPerRow { get; set; }
 
-        public IExcelComplexGroupPropertyConfigurationMappingFluent HideHedaerPerRow(bool hideHeaderPerRow)
+        public ExcelTableProperty(IExcelPropertiesContainer parent) : base(parent) { }
+
+        public ExcelTableProperty() : base(null) { }
+
+        public IExcelComplexGroupPropertyConfigurationMappingFluent HideHeaderPerRow(bool hideHeaderPerRow)
         {
             ShowHeaderPerRow = !hideHeaderPerRow;
             return this;
         }
 
-        public IExcelTablePropertyMappingFluent<TDto> Map(Action<IExcelTablePropertyConfigurationMappingFluent<TDto>> relationship)
+        public IExcelTablePropertyMappingFluent<TDto> MapTable(Action<IExcelTablePropertyConfigurationMappingFluent<TDto>> relationship)
         {
-            var newGroupProperty = new ExcelTableProperty<TDto>();            
+            var newGroupProperty = new ExcelTableProperty<TDto>(this);
             newGroupProperty.BuildDataExtractor(data => data);
             relationship(newGroupProperty);
             Properties.Add(newGroupProperty);
@@ -30,10 +34,9 @@ namespace SampleExcel.Component
             return newGroupProperty;
         }
 
-        public IExcelTablePropertyMappingFluent<TNewDto> Map<TNewDto>(System.Linq.Expressions.Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelTablePropertyConfigurationMappingFluent<TNewDto>> relationship)
+        public IExcelTablePropertyMappingFluent<TNewDto> MapTable<TNewDto>(System.Linq.Expressions.Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelTablePropertyConfigurationMappingFluent<TNewDto>> relationship)
         {
-            
-            var newGroupProperty = new ExcelTableProperty<TNewDto>();
+            var newGroupProperty = new ExcelTableProperty<TNewDto>(this);
             newGroupProperty.BuildDataExtractor(propertyExpression);
             relationship(newGroupProperty);
             Properties.Add(newGroupProperty);

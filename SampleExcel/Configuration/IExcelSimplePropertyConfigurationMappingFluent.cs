@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SampleExcel.Configuration
+namespace Excel.Component.Library.Configuration
 {
     public interface IExcelSimplePropertyConfigurationMappingFluent<TDto> : IExcelPropertyConfigurationMappingFluent { }
 }

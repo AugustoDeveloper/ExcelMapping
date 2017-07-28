@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using SampleExcel.Component.Base;
-using SampleExcel.Mapping;
-using SampleExcel.Configuration;
+using Excel.Component.Library.Component.Base;
+using Excel.Component.Library.Mapping;
+using Excel.Component.Library.Configuration;
 using System.Linq.Expressions;
 
-namespace SampleExcel.Component
+namespace Excel.Component.Library.Component
 {
     public interface IExcelSimpleGroupProperty<TDto> : IExcelGroupProperty
     {
@@ -21,12 +21,28 @@ namespace SampleExcel.Component
 
         public int? StartRow { get; set; }
 
+        public ExcelSimpleGroupProperty(IExcelPropertiesContainer parent) : base(parent)
+        {
+            Properties = new List<IExcelProperty>();
+            ShowCaption = true;
+        }
+
         public int GetMaxColumnOrder()
         {
-            var maxOrder = Properties.Max(p => p.ColumnOrder);
-            foreach(var property in Properties.OfType<IExcelPropertiesContainer>())
+            var maxOrder = 0;
+            if (Properties.Count > 0)
             {
-                var currentMaxOrder = property.GetMaxColumnOrder();
+                maxOrder = Properties.Max(p => p.ColumnOrder);
+                foreach (var property in Properties.OfType<IExcelPropertiesContainer>())
+                {
+                    var currentMaxOrder = property.GetMaxColumnOrder();
+                    maxOrder = maxOrder < currentMaxOrder ? currentMaxOrder : maxOrder;
+                }
+            }
+
+            if (Parent != null && maxOrder == 0)
+            {
+                var currentMaxOrder = Parent.GetMaxColumnOrder();
                 maxOrder = maxOrder < currentMaxOrder ? currentMaxOrder : maxOrder;
             }
 
@@ -39,19 +55,26 @@ namespace SampleExcel.Component
             return this;
         }
 
-        public IExcelSimplePropertyConfigurationMappingFluent<TDto> Map(Action<IExcelSimpleGroupPropertyMappingFluent<TDto>> relationship)
-		{
-            var newGroupProperty = new ExcelSimpleGroupProperty<TDto>();
+        public IExcelSimplePropertyConfigurationMappingFluent<TDto> MapGroup(Action<IExcelSimpleGroupPropertyMappingFluent<TDto>> relationship)
+        {
+            var newGroupProperty = new ExcelSimpleGroupProperty<TDto>(this);
             newGroupProperty.BuildDataExtractor(data => data);
-			relationship(newGroupProperty);
-			Properties.Add(newGroupProperty);
+            relationship(newGroupProperty);
+            Properties.Add(newGroupProperty);
 
-			return newGroupProperty;
+            return newGroupProperty;
         }
 
-        public IExcelSimplePropertyConfigurationMappingFluent<TNewDto> Map<TNewDto>(Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelSimpleGroupPropertyMappingFluent<TNewDto>> relationship)
+        public override IExcelSimplePropertyConfigurationMappingFluent<TDto> MapProperty<TValue>(Expression<Func<TDto, TValue>> propertyExpression)
         {
-            var newGroupProperty = new ExcelSimpleGroupProperty<TNewDto>();
+            var property = new ExcelSimpleProperty<TDto>(this);
+            Properties.Add(property);
+            return property.MapProperty<TValue>(propertyExpression);
+        }
+
+        public IExcelSimplePropertyConfigurationMappingFluent<TNewDto> MapGroup<TNewDto>(Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelSimpleGroupPropertyMappingFluent<TNewDto>> relationship)
+        {
+            var newGroupProperty = new ExcelSimpleGroupProperty<TNewDto>(this);
             newGroupProperty.BuildDataExtractor(propertyExpression);
             relationship(newGroupProperty);
             Properties.Add(newGroupProperty);
@@ -59,10 +82,10 @@ namespace SampleExcel.Component
             return newGroupProperty;
         }
 
-		public void BuildDataExtractor<TParentDto>(Expression<Func<TParentDto, TDto>> propertyExpression)
-		{
-			Extractor = new DataExtraction<TParentDto, TDto>(propertyExpression);
-		}
+        public void BuildDataExtractor<TParentDto>(Expression<Func<TParentDto, TDto>> propertyExpression)
+        {
+            Extractor = new DataExtraction<TParentDto, TDto>(propertyExpression);
+        }
 
         public IExcelPropertiesContainerConfigurationMappingFluent StartAtRow(int startRow)
         {

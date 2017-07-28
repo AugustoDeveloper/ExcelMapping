@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq.Expressions;
-using SampleExcel.Configuration;
+using Excel.Component.Library.Configuration;
 
-namespace SampleExcel.Mapping
+namespace Excel.Component.Library.Mapping
 {
     public interface IExcelSimpleGroupPropertyMappingFluent<TDto> : IExcelSimplePropertyMappingFluent<TDto>
     {
-        IExcelSimplePropertyConfigurationMappingFluent<TDto> Map(Action<IExcelSimpleGroupPropertyMappingFluent<TDto>> relationship);
-        IExcelSimplePropertyConfigurationMappingFluent<TNewDto> Map<TNewDto>(Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelSimpleGroupPropertyMappingFluent<TNewDto>> relationship);
+        IExcelSimplePropertyConfigurationMappingFluent<TDto> MapGroup(Action<IExcelSimpleGroupPropertyMappingFluent<TDto>> relationship);
+        IExcelSimplePropertyConfigurationMappingFluent<TNewDto> MapGroup<TNewDto>(Expression<Func<TDto, TNewDto>> propertyExpression, Action<IExcelSimpleGroupPropertyMappingFluent<TNewDto>> relationship);
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using OfficeOpenXml;
-using SampleExcel.Component.Base;
+using Excel.Component.Library.Component.Base;
 
-namespace SampleExcel.Processor
+namespace Excel.Component.Library.Processor
 {
     public interface IExcelProcessor
     {

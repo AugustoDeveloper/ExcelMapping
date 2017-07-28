@@ -1,8 +1,8 @@
 ﻿using System;
-namespace SampleExcel.Configuration
+namespace Excel.Component.Library.Configuration
 {
     public interface IExcelComplexGroupPropertyConfigurationMappingFluent : IExcelGroupPropertyConfigurationMapping
     {
-        IExcelComplexGroupPropertyConfigurationMappingFluent HideHedaerPerRow(bool hideHeaderPerRow);
+        IExcelComplexGroupPropertyConfigurationMappingFluent HideHeaderPerRow(bool hideHeaderPerRow);
     }
 }

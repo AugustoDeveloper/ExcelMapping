@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
-using SampleExcel.Component.Base;
-using SampleExcel.Configuration;
-using SampleExcel.Mapping;
+using Excel.Component.Library.Component.Base;
+using Excel.Component.Library.Configuration;
+using Excel.Component.Library.Mapping;
 
-namespace SampleExcel.Component
+namespace Excel.Component.Library.Component
 {
     public interface IExcelSimpleProperty<TDto> : IExcelProperty
     {
@@ -15,7 +15,15 @@ namespace SampleExcel.Component
     {
         protected IDataExtraction Extractor { get; set; }
 
+        public IExcelPropertiesContainer Parent { get; set; }
+
         public int ColumnOrder { get; set; }
+
+        public ExcelSimpleProperty(IExcelPropertiesContainer parent)
+        {
+            Parent = parent;
+            ColumnOrder = Parent != null ? Parent.GetMaxColumnOrder() + 1 : 1;
+        }
 
         public string Caption { get; set; }
 
@@ -29,7 +37,7 @@ namespace SampleExcel.Component
             return Extractor.GetValueFromData(data);
         }
 
-        public IExcelSimplePropertyConfigurationMappingFluent<TDto> Map<TValue>(Expression<Func<TDto, TValue>> propertyExpression)
+        public virtual IExcelSimplePropertyConfigurationMappingFluent<TDto> MapProperty<TValue>(Expression<Func<TDto, TValue>> propertyExpression)
         {
             BuildDataExtractor(propertyExpression);
             return this;

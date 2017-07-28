@@ -1,0 +1,10 @@
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/bin/Debug/netcoreapp1.1/SampleExcelCore.deps.json
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/bin/Debug/netcoreapp1.1/SampleExcelCore.runtimeconfig.json
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/bin/Debug/netcoreapp1.1/SampleExcelCore.runtimeconfig.dev.json
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/bin/Debug/netcoreapp1.1/SampleExcelCore.dll
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/bin/Debug/netcoreapp1.1/SampleExcelCore.pdb
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/obj/Debug/netcoreapp1.1/SampleExcelCore.csprojResolveAssemblyReference.cache
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/obj/Debug/netcoreapp1.1/SampleExcelCore.csproj.CoreCompileInputs.cache
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/obj/Debug/netcoreapp1.1/SampleExcelCore.AssemblyInfo.cs
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/obj/Debug/netcoreapp1.1/SampleExcelCore.dll
+/Users/augustocesar/Documents/Projetos/Csharp/SampleExcel/SampleExcelCore/obj/Debug/netcoreapp1.1/SampleExcelCore.pdb

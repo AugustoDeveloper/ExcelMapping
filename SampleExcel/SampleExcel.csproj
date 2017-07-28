@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1AE1A8C3-7536-427A-BCB6-D1CD3C1E0EBC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SampleExcel</RootNamespace>
+    <AssemblyName>SampleExcel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Processor\IExcelProcessor.cs" />
+    <Compile Include="Processor\ExcelSimpleTableProcessor.cs" />
+    <Compile Include="Configuration\IExcelPropertyConfigurationMappingFluent.cs" />
+    <Compile Include="Component\Base\IExcelProperty.cs" />
+    <Compile Include="Component\ExcelSimpleProperty.cs" />
+    <Compile Include="Component\DataExtraction.cs" />
+    <Compile Include="Mapping\IExcelSimplePropertyMappingFluent.cs" />
+    <Compile Include="Configuration\IExcelSimplePropertyConfigurationMappingFluent.cs" />
+    <Compile Include="Component\Base\IExcelGroupProperty.cs" />
+    <Compile Include="Component\Base\IExcelPropertiesContainer.cs" />
+    <Compile Include="Component\ExcelSimpleGroupProperty.cs" />
+    <Compile Include="Processor\ExcelProcessorBuilder.cs" />
+    <Compile Include="Processor\IExcelHeaderProcessor.cs" />
+    <Compile Include="Processor\IExcelRowProcessor.cs" />
+    <Compile Include="Processor\ExcelComplexTableProcessor.cs" />
+    <Compile Include="Processor\ExcelBaseProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Component\" />
+    <Folder Include="Processor\" />
+    <Folder Include="Component\Base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

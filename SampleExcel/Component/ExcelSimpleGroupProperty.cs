@@ -35,7 +35,8 @@ namespace SampleExcel.Component
 
         public IExcelPropertiesContainerConfigurationMappingFluent HideCaption(bool hideCaption)
         {
-            throw new NotImplementedException();
+            ShowCaption = !hideCaption;
+            return this;
         }
 
         public IExcelSimplePropertyConfigurationMappingFluent<TDto> Map(Action<IExcelSimpleGroupPropertyMappingFluent<TDto>> relationship)

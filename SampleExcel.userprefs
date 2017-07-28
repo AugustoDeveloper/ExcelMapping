@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{1AE1A8C3-7536-427A-BCB6-D1CD3C1E0EBC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SampleExcel/Mapping/IExcelSimpleGroupPropertyMappingFluent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SampleExcel/Component/ExcelTableProperty.cs">
     <Files>
-      <File FileName="SampleExcel/Program.cs" Line="20" Column="15" />
-      <File FileName="SampleExcel/Component/ExcelSimpleGroupProperty.cs" Line="51" Column="206" />
-      <File FileName="SampleExcel/Mapping/IExcelSimpleGroupPropertyMappingFluent.cs" Line="10" Column="9" />
+      <File FileName="SampleExcel/Program.cs" Line="19" Column="45" />
+      <File FileName="SampleExcel/Component/Base/IExcelTableContainer.cs" Line="4" Column="71" />
+      <File FileName="SampleExcel/Component/ExcelTableProperty.cs" Line="29" Column="49" />
+      <File FileName="SampleExcel/Component/ExcelSimpleGroupProperty.cs" Line="52" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />

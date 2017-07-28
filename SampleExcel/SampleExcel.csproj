@@ -58,6 +58,12 @@
     <Compile Include="Configuration\IExcelGroupPropertyConfigurationMapping.cs" />
     <Compile Include="Configuration\IExcelPropertiesContainerConfigurationMappingFluent.cs" />
     <Compile Include="Mapping\IExcelSimpleGroupPropertyMappingFluent.cs" />
+    <Compile Include="Component\Base\IExcelTableContainer.cs" />
+    <Compile Include="Component\ExcelTableProperty.cs" />
+    <Compile Include="ExcelMappingExtension.cs" />
+    <Compile Include="Configuration\IExcelTablePropertyConfigurationMappingFluent.cs" />
+    <Compile Include="Configuration\IExcelComplexGroupPropertyConfigurationMappingFluent.cs" />
+    <Compile Include="Mapping\IExcelTablePropertyMappingFluent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
